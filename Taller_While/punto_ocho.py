@@ -10,6 +10,9 @@ while estado:
     print('2. Resta')
     print('3. Multiplicar')
     print('4. Division')
+    print('5. Par o Impar')
+    print('6. Salir')
+
 
     suma = int (input('Ingrese que opcion quiere realizar: '))
 
@@ -33,6 +36,14 @@ while estado:
         numero_dos = int (input('Ingrese segundo numero: '))
         resultado_division = numero_uno/numero_dos
         print(f'el resultado de la division es: {resultado_division}')
+    elif suma ==5:
+        numero_uno = int (input('Ingrese primer numero: '))
+        if numero_uno %2 ==0:
+            print(f'el numero {numero_uno} es par')
+        else:
+            print(f'el numero {numero_uno} es impar')
+    elif suma ==6:
+        estado = False
     else:
         print('=====================================')
         print('la opcion ingresada no existe')
