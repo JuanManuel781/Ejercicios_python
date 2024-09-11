@@ -65,12 +65,11 @@ class Empleado(Usuario):
         else:
             print(f"No se puede adelantar")
 
-    def pagarNomina(self):
+    def pagarNomina(self,prestamo):
         if self.prestamoEnCurso :
             deposito = float(input("Que valor desea depositar: "))
-            cantidad =  self.sueldo-deposito
-           
-            print(f"Su saldo actual es de ${cantidad}")
+            cantidad =  self.sueldo+deposito
+            print(f"Su saldo actual es de ${cantidad-prestamo} Ya que cuenta con un adelanto de {prestamo}")
         else:
             deposito = float(input("Que valor desea depositar: "))
             self.sueldo +=deposito
@@ -78,19 +77,18 @@ class Empleado(Usuario):
 
 
 
-#usuario1 = Usuario("Juan Manuel", 24,'rosario',33555555,12000)
-#usuario1.depositar()
-#usuario1.debitar()
-#usuario1.cumpleanos()
+usuario1 = Usuario("Juan Manuel", 24,'rosario',33555555,12000)
+usuario1.depositar()
+usuario1.debitar()
+usuario1.cumpleanos()
 
-#cliente1 = Cliente("Juan Manuel",24, 'rosario', 324512, 12000,12,'tecnico')
-#cliente1.solicitarPrestamo()
-#cliente1.informacionDelUsuario()
-#cliente1.cumpleanos()
+cliente1 = Cliente("Juan Manuel",24, 'rosario', 324512, 12000,12,'tecnico')
+cliente1.solicitarPrestamo()
+cliente1.informacionDelUsuario()
+cliente1.cumpleanos()
 
 empleado = Empleado("Juan Manuel", 24,'rosario',33555555,12000,'aaaa',14,12000)
 empleado.adelantarSueldo(2000)
 empleado.informacionDelEmpleado()
-
-empleado.pagarNomina()
+empleado.pagarNomina(2000)
 
